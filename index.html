@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejandro Larco | Software Engineer</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <!-- Navbar Estilo Tech Limpio -->
+    <header class="sticky-top nav-tech shadow-sm">
+        <nav class="container navbar navbar-expand-lg py-3">
+            <a class="navbar-brand fw-bold text-cyan font-monospace" href="#">AL_DEV<span class="text-white">_</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars text-white fs-3"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-4 fw-medium text-uppercase small">
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#sobre-mi">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#stack">Stack</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="#proyectos">Proyectos</a></li>
+                    <li class="nav-item"><a class="nav-link btn-tech px-4 ms-lg-2" href="#contacto">Contactar</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section d-flex align-items-center">
+        <div class="container z-1">
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <span class="badge bg-cyan-subtle text-cyan px-3 py-2 mb-3 fs-6 rounded-pill border border-cyan">&gt; Desarrollador de Software</span>
+                    <h1 class="display-3 fw-bolder text-white mb-4">Arquitecturas robustas y <span class="text-cyan text-glow">lógicas complejas.</span></h1>
+                    <p class="lead text-muted mb-5 pe-lg-5">
+                        Especializado en integración de Inteligencia Artificial, físicas en motores gráficos y ecosistemas web escalables.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+                        <a href="#proyectos" class="btn btn-cyan btn-lg px-5 py-3 hover-scale fw-bold"><i class="fa-solid fa-folder-open me-2"></i> Ver Casos de Estudio</a>
+                        <a href="#" class="btn btn-outline-light btn-lg px-5 py-3 hover-scale"><i class="fa-solid fa-download me-2"></i> Descargar CV</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mí -->
+    <section id="sobre-mi" class="container py-6">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5 text-center">
+                <div class="image-wrapper p-2 rounded-4 mx-auto" style="max-width: 400px;">
+                    <!-- Reemplazar con foto real -->
+                    <img src="imagenes/Persona.png" alt="Alejandro Larco" class="img-fluid rounded-4 shadow-lg profile-img">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h2 class="fw-bold text-white mb-4"><i class="fa-solid fa-user-astronaut text-cyan me-2"></i> Sobre Mí</h2>
+                <p class="fs-5 text-muted lh-lg mb-4">
+                    Soy un desarrollador de software radicado en Quito, Ecuador. Me apasiona resolver problemas operativos traduciendo requerimientos complejos en código estructurado y arquitecturas sólidas. Mi experiencia abarca desde el diseño de bases de datos relacionales hasta la integración de hardware local con inteligencias artificiales híbridas.
+                </p>
+                <p class="fs-5 text-muted lh-lg mb-4">
+                    Priorizo los principios SOLID, el patrón MVC y la optimización de recursos (CPU/VRAM). Busco siempre que el software no solo sea funcional, sino altamente escalable, seguro y mantenible a largo plazo.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stack Tecnológico -->
+    <section id="stack" class="bg-section py-6 border-top border-bottom border-secondary-subtle">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white"><i class="fa-solid fa-layer-group text-cyan me-2"></i> Stack Tecnológico</h2>
+                <p class="text-muted">Herramientas y lenguajes base de mis desarrollos.</p>
+            </div>
+            
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="tech-card text-center p-4 rounded-3 h-100 hover-scale">
+                        <i class="fa-brands fa-php fa-3x text-white mb-3"></i>
+                        <h6 class="fw-bold text-muted m-0">PHP / Laravel</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="tech-card text-center p-4 rounded-3 h-100 hover-scale">
+                        <i class="fa-brands fa-python fa-3x text-white mb-3"></i>
+                        <h6 class="fw-bold text-muted m-0">Python</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="tech-card text-center p-4 rounded-3 h-100 hover-scale">
+                        <i class="fa-brands fa-cuttlefish fa-3x text-white mb-3"></i>
+                        <h6 class="fw-bold text-muted m-0">C++</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="tech-card text-center p-4 rounded-3 h-100 hover-scale">
+                        <i class="fa-solid fa-gamepad fa-3x text-white mb-3"></i>
+                        <h6 class="fw-bold text-muted m-0">Unreal Engine 5</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="tech-card text-center p-4 rounded-3 h-100 hover-scale">
+                        <i class="fa-solid fa-database fa-3x text-white mb-3"></i>
+                        <h6 class="fw-bold text-muted m-0">MySQL / SQLite</h6>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <div class="tech-card text-center p-4 rounded-3 h-100 hover-scale">
+                        <i class="fa-brands fa-java fa-3x text-white mb-3"></i>
+                        <h6 class="fw-bold text-muted m-0">Java</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Principales -->
+    <section id="proyectos" class="container py-6">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end mb-5">
+            <div>
+                <h2 class="fw-bold text-white mb-2"><i class="fa-solid fa-star text-cyan me-2"></i> Casos de Estudio Principales</h2>
+                <p class="text-muted m-0">Proyectos de alta complejidad arquitectónica.</p>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <!-- Unreal Engine -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card project-card h-100 overflow-hidden">
+                    <img src="imagenes/UnrealEngine.png" class="card-img-top" alt="Demo UE5">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-white mb-3">IA Táctica & Shooter</h4>
+                        <p class="text-muted small mb-4">Simulación interactiva con físicas procedurales (Chaos Engine). Núcleo de percepción sensorial en C++ nativo que alimenta un Behavior Tree modular.</p>
+                        <div class="mt-auto d-flex gap-2">
+                            <a href="proyecto-ue5.html" class="btn btn-outline-cyan w-100">Ver Caso de Estudio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- L-IA -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card project-card h-100 overflow-hidden">
+                    <img src="imagenes/L-IA.png" class="card-img-top" alt="L-IA Asistente">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-white mb-3">L-IA: Asistente Híbrido</h4>
+                        <p class="text-muted small mb-4">Enrutador dinámico que balancea procesamiento entre hardware local y nube. Integra cortafuegos de seguridad del S.O. y Context Stacking.</p>
+                        <div class="mt-auto d-flex gap-2">
+                            <a href="proyecto-lia.html" class="btn btn-outline-cyan w-100">Ver Caso de Estudio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kardex ERP -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card project-card h-100 overflow-hidden">
+                    <img src="imagenes/Catalogo.png" class="card-img-top" alt="Sistema ERP">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h4 class="fw-bold text-white mb-3">ERP & Cotizador BTO</h4>
+                        <p class="text-muted small mb-4">Plataforma web para manufactura a medida. Implementa arquitectura MRP, control de inventario con transacciones atómicas y seguridad por roles.</p>
+                        <div class="mt-auto d-flex gap-2">
+                            <a href="proyecto-kardex.html" class="btn btn-outline-cyan w-100">Ver Caso de Estudio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Complementarios -->
+    <section class="bg-section py-6 border-top border-secondary-subtle">
+        <div class="container">
+            <h3 class="fw-bold text-white mb-5 text-center"><i class="fa-solid fa-code-branch text-muted me-2"></i> Proyectos Complementarios</h3>
+            
+            <div class="row justify-content-center">
+                <!-- Java Farmacia -->
+                <div class="col-lg-8">
+                    <div class="card project-card-horizontal overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-md-5">
+                                <img src="imagenes/Crud.png" class="img-fluid h-100 object-fit-cover" alt="Software Desktop">
+                            </div>
+                            <div class="col-md-7">
+                                <div class="card-body p-4 p-md-5 h-100 d-flex flex-column justify-content-center">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="fa-brands fa-java text-cyan fs-4 me-2"></i>
+                                        <span class="text-cyan fw-bold text-uppercase small">Aplicación de Escritorio</span>
+                                    </div>
+                                    <h4 class="fw-bold text-white mb-3">Sistema de Gestión en Java</h4>
+                                    <p class="text-muted mb-4">Desarrollo de un software robusto para la administración y control de inventarios de farmacia. Interfaz construida en Java Swing con conexión segura y consultas optimizadas a base de datos relacional (MySQL).</p>
+                                    <div>
+                                        <a href="proyecto-farmacia.html" class="btn btn-sm btn-outline-light"><i class="fa-solid fa-arrow-right me-2"></i>Ver Detalles</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto" class="footer-tech pt-5 pb-3 border-top border-cyan border-opacity-25 mt-5">
+        <div class="container">
+            <div class="row g-5 mb-5 justify-content-between">
+                <div class="col-lg-5">
+                    <h3 class="fw-bold text-white mb-4">¿Iniciamos un proyecto?</h3>
+                    <p class="text-muted mb-4">Abierto a nuevas oportunidades laborales y desafíos técnicos en el área de desarrollo de software.</p>
+                    <a href="mailto:alejandrolarco2020@hotmail.com" class="btn btn-cyan btn-lg px-4"><i class="fa-solid fa-paper-plane me-2"></i> Enviar Mensaje</a>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Contacto Directo</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-3"><i class="fa-solid fa-location-dot me-3 text-cyan"></i> Quito, Ecuador</li>
+                        <li class="mb-3"><i class="fa-solid fa-envelope me-3 text-cyan"></i> alejandrolarco2020@hotmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Redes Profesionales</h5>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="https://www.linkedin.com/in/alejandro-larco-03297b42a/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BKKsmOLqZToa1oCr6Wed6mg%3D%3D" class="text-muted text-decoration-none hover-text-cyan transition-all"><i class="fa-brands fa-linkedin fs-5 me-2 w-20px text-center"></i> LinkedIn</a>
+                        <a href="https://github.com/Alej673" class="text-muted text-decoration-none hover-text-cyan transition-all"><i class="fa-brands fa-github fs-5 me-2 w-20px text-center"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center border-top border-secondary-subtle pt-4">
+                <p class="text-muted small mb-0">© 2026 Alejandro Larco | Desarrollado con HTML, CSS y Bootstrap 5.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
