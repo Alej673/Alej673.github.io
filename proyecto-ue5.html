@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,517 +15,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <style>
-        :root {
-            --bg-main: #141824;
-            --bg-alt: #1b202e;
-            --bg-card: #222839;
-            --accent: #0ea5e9;
-            --accent-light: #38bdf8;
-            --text-main: #e2e8f0;
-            --text-secondary: #94a3b8;
-            --border-soft: rgba(148, 163, 184, 0.12);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-main);
-            color: var(--text-main);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.65;
-        }
-
-        h1, h2, h3, h4, .font-display {
-            font-family: 'Space Grotesk', sans-serif;
-            letter-spacing: -0.02em;
-        }
-
-        code, .font-mono {
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        ::selection {
-            background: var(--accent);
-            color: #0b1018;
-        }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--bg-main);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #2d3548;
-            border-radius: 10px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--accent);
-        }
-
-        /* Navbar */
-        .navbar-tech {
-            background: rgba(20, 24, 36, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-soft);
-        }
-
-        .brand-logo {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--text-main) !important;
-            letter-spacing: -0.03em;
-        }
-
-        .brand-logo span {
-            color: var(--accent-light);
-        }
-
-        .btn-back-portfolio {
-            border: 1px solid rgba(56, 189, 248, 0.35);
-            color: var(--accent-light);
-            background: rgba(14, 165, 233, 0.08);
-            font-size: 0.9rem;
-            font-weight: 500;
-            padding: 0.5rem 1.1rem;
-            border-radius: 8px;
-            transition: all 0.25s ease;
-        }
-
-        .btn-back-portfolio:hover {
-            background: var(--accent);
-            color: #0b1018;
-            border-color: var(--accent);
-            transform: translateX(-3px);
-        }
-
-        /* Hero */
-        .hero-project {
-            padding: 7rem 0 4.5rem 0;
-            position: relative;
-            overflow: hidden;
-            background:
-                radial-gradient(ellipse 80% 60% at 15% 0%, rgba(14, 165, 233, 0.16), transparent 60%),
-                radial-gradient(ellipse 60% 50% at 100% 20%, rgba(56, 189, 248, 0.10), transparent 60%),
-                var(--bg-main);
-        }
-
-        .badge-category {
-            background: rgba(14, 165, 233, 0.12);
-            color: var(--accent-light);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.78rem;
-            font-weight: 500;
-            padding: 0.45rem 0.9rem;
-            border-radius: 50px;
-            letter-spacing: 0.03em;
-        }
-
-        .hero-title {
-            font-size: clamp(2.1rem, 5vw, 3.4rem);
-            font-weight: 700;
-            line-height: 1.15;
-            margin: 1.2rem 0 1.2rem 0;
-            background: linear-gradient(100deg, #ffffff 30%, var(--accent-light) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero-desc {
-            color: var(--text-secondary);
-            font-size: 1.08rem;
-            max-width: 640px;
-        }
-
-        .tech-badge {
-            background: var(--bg-card);
-            border: 1px solid var(--border-soft);
-            color: var(--text-main);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.82rem;
-            padding: 0.4rem 0.85rem;
-            border-radius: 7px;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .tech-badge i {
-            color: var(--accent-light);
-        }
-
-        .doc-download-card {
-            background: linear-gradient(160deg, var(--bg-card) 0%, #1a2030 100%);
-            border: 1px solid rgba(56, 189, 248, 0.25);
-            border-radius: 16px;
-            padding: 1.8rem;
-            box-shadow: 0 20px 45px -20px rgba(0,0,0,0.5);
-        }
-
-        .doc-download-card .icon-wrap {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
-            background: rgba(14, 165, 233, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.4rem;
-            color: var(--accent-light);
-        }
-
-        .btn-download-doc {
-            background: var(--accent);
-            color: #ffffff;
-            font-weight: 600;
-            padding: 0.7rem 1.4rem;
-            border-radius: 9px;
-            border: none;
-            transition: all 0.25s ease;
-            font-size: 0.95rem;
-        }
-
-        .btn-download-doc:hover {
-            background: var(--accent-light);
-            color: #0b1018;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px -8px rgba(56, 189, 248, 0.5);
-        }
-
-        /* Section generic */
-        .section-alt {
-            background-color: var(--bg-alt);
-            padding: 4.5rem 0;
-        }
-
-        .section-main {
-            padding: 4.5rem 0;
-        }
-
-        .section-label {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--accent-light);
-            font-size: 0.85rem;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        .section-title {
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
-            font-weight: 700;
-            margin-bottom: 0.75rem;
-        }
-
-        .section-subtitle {
-            color: var(--text-secondary);
-            max-width: 650px;
-        }
-
-        /* Video showcase */
-        .video-container-16x9 {
-            position: relative;
-            width: 100%;
-            padding-top: 56.25%;
-            background: #0b0e16;
-            border-radius: 14px;
-            overflow: hidden;
-            border: 1px solid var(--border-soft);
-            box-shadow: 0 25px 50px -20px rgba(0,0,0,0.6);
-        }
-
-        .video-container-16x9 video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            background: #000;
-        }
-
-        .spec-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-soft);
-            border-radius: 14px;
-            padding: 1.6rem;
-            height: 100%;
-        }
-
-        .spec-card h5 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .spec-card h5 i {
-            color: var(--accent-light);
-        }
-
-        .spec-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.65rem 0;
-            border-bottom: 1px dashed var(--border-soft);
-            font-size: 0.9rem;
-        }
-
-        .spec-item:last-of-type {
-            border-bottom: none;
-        }
-
-        .spec-item .label {
-            color: var(--text-secondary);
-        }
-
-        .spec-item .value {
-            font-family: 'JetBrains Mono', monospace;
-            color: var(--text-main);
-            font-weight: 500;
-            text-align: right;
-        }
-
-        .spec-footnote {
-            margin-top: 1.1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-soft);
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-        }
-
-        .spec-footnote i {
-            color: var(--accent-light);
-        }
-
-        /* Pillars */
-        .pillar-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-soft);
-            border-radius: 16px;
-            padding: 2rem;
-            height: 100%;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pillar-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent), var(--accent-light));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.35s ease;
-        }
-
-        .pillar-card:hover {
-            border-color: rgba(56, 189, 248, 0.4);
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px -20px rgba(14, 165, 233, 0.35);
-        }
-
-        .pillar-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .pillar-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            background: rgba(14, 165, 233, 0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--accent-light);
-            margin-bottom: 1.3rem;
-        }
-
-        .pillar-card h4 {
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 0.8rem;
-        }
-
-        .pillar-card p {
-            color: var(--text-secondary);
-            font-size: 0.92rem;
-            margin-bottom: 1rem;
-        }
-
-        .pillar-tag-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.4rem;
-        }
-
-        .pillar-tag {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.72rem;
-            color: var(--accent-light);
-            background: rgba(14, 165, 233, 0.08);
-            border: 1px solid rgba(56, 189, 248, 0.2);
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-        }
-
-        /* Gallery */
-        .gallery-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-soft);
-            border-radius: 14px;
-            overflow: hidden;
-            height: 100%;
-        }
-
-        .gallery-img-wrap {
-            width: 100%;
-            aspect-ratio: 16 / 10;
-            overflow: hidden;
-            background: #0b0e16;
-        }
-
-        .gallery-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.4s ease;
-        }
-
-        .gallery-card:hover .gallery-img-wrap img {
-            transform: scale(1.06);
-        }
-
-        .gallery-caption {
-            padding: 1.1rem 1.3rem;
-        }
-
-        .gallery-caption h6 {
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .gallery-caption p {
-            font-size: 0.82rem;
-            color: var(--text-secondary);
-            margin-bottom: 0;
-        }
-
-        /* Debugging section */
-        .debug-item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-soft);
-            border-left: 3px solid var(--accent);
-            border-radius: 10px;
-            padding: 1.4rem 1.5rem;
-            height: 100%;
-        }
-
-        .debug-item .debug-index {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            color: var(--accent-light);
-            letter-spacing: 0.05em;
-        }
-
-        .debug-item h5 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin: 0.5rem 0 0.6rem 0;
-        }
-
-        .debug-item p {
-            font-size: 0.87rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.7rem;
-        }
-
-        .debug-fix-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            font-size: 0.78rem;
-            font-weight: 500;
-            color: #4ade80;
-            background: rgba(74, 222, 128, 0.1);
-            border: 1px solid rgba(74, 222, 128, 0.25);
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
-        }
-
-        /* Footer */
-        .footer-minimal {
-            background: var(--bg-main);
-            border-top: 1px solid var(--border-soft);
-            padding: 2rem 0;
-        }
-
-        .footer-minimal p {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-            margin: 0;
-        }
-
-        .footer-minimal a {
-            color: var(--text-secondary);
-            transition: color 0.2s ease;
-        }
-
-        .footer-minimal a:hover {
-            color: var(--accent-light);
-        }
-
-        @media (max-width: 767.98px) {
-            .hero-project {
-                padding: 6rem 0 3rem 0;
-                text-align: center;
-            }
-            .hero-desc {
-                margin-left: auto;
-                margin-right: auto;
-            }
-        }
-    </style>
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/UE5.css">
 </head>
 <body>
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar navbar-expand-lg navbar-tech sticky-top py-3">
-        <div class="container">
-            <a class="navbar-brand brand-logo" href="index.html">AL_DEV<span>_</span></a>
-            <div class="d-flex align-items-center">
-                <a href="index.html#proyectos" class="btn-back-portfolio">
-                    <i class="fa-solid fa-arrow-left me-2"></i>Volver al Portafolio
-                </a>
+    <header class="sticky-top nav-tech shadow-sm">
+        <nav class="container navbar navbar-expand-lg py-3">
+            <a class="navbar-brand fw-bold text-cyan font-monospace" href="index.html">AL_DEV<span class="text-white">_</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars text-white fs-3"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-4 fw-medium text-uppercase small align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="index.html#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="index.html#sobre-mi">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="index.html#stack">Stack</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="index.html#proyectos">Proyectos</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-tech px-4 ms-lg-2" href="index.html#proyectos">
+                            <i class="fa-solid fa-arrow-left me-2"></i>Volver al Portafolio
+                        </a>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
     <!-- ================= HERO ================= -->
     <header class="hero-project">
@@ -540,7 +57,6 @@
                         Demo técnica desarrollada en Unreal Engine 5 que integra un sistema de IA sensorial
                         híbrido en C++/Blueprint, un modelo de balística hitscan con cobertura procedural y
                         una capa de físicas Chaos optimizada para escenarios de combate en tiempo real.
-                        Construida como pieza de portafolio orientada a roles remotos de desarrollo de videojuegos.
                     </p>
                     <div class="d-flex flex-wrap gap-2 mt-4">
                         <span class="tech-badge"><i class="fa-solid fa-code"></i>C++</span>
@@ -574,133 +90,113 @@
         </div>
     </header>
 
-    <!-- ================= SHOWCASE TÉCNICO ================= -->
+    <!-- ================= DESGLOSE DE MÓDULOS CON VIDEOS ================= -->
     <section class="section-main">
-        <div class="container">
-            <div class="row g-4">
-                <!-- Video demo -->
-                <div class="col-lg-8">
-                    <span class="section-label">Demo en Ejecución</span>
-                    <h2 class="section-title mt-2 mb-3">Showcase Técnico</h2>
-                    <div class="video-container-16x9">
-                        <video controls preload="metadata" poster="assets/img/ue5-video-poster.jpg">
-                            <source src="videos/Rueba Tecnica V4.mp4" type="video/mp4">
-                            Tu navegador no soporta la reproducción de video HTML5.
-                        </video>
-                    </div>
-                    <p class="text-secondary small mt-3 mb-0">
-                        <i class="fa-regular fa-circle-play me-1"></i>
-                        Captura directa del editor mostrando el comportamiento de IA en un entorno de pruebas Graybox.
-                    </p>
-                </div>
-
-                <!-- Ficha técnica entorno de pruebas -->
-                <div class="col-lg-4">
-                    <span class="section-label d-block">&nbsp;</span>
-                    <div class="spec-card mt-2">
-                        <h5><i class="fa-solid fa-microchip"></i>Entorno de Pruebas</h5>
-                        <div class="spec-item">
-                            <span class="label">Procesador</span>
-                            <span class="value">Intel Core i5-13420H</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="label">GPU</span>
-                            <span class="value">RTX 4050 6GB VRAM</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="label">Motor</span>
-                            <span class="value">Unreal Engine 5</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="label">Render</span>
-                            <span class="value">Lumen + Nanite (Off)</span>
-                        </div>
-                        <div class="spec-item">
-                            <span class="label">Nivel de prueba</span>
-                            <span class="value">Graybox / Vertical Slice</span>
-                        </div>
-                        <div class="spec-footnote">
-                            <i class="fa-solid fa-gauge-high me-1"></i>
-                            Enfoque de optimización orientado a hardware de gama media: bajo consumo de CPU
-                            en lógica de IA y control estricto del uso de VRAM en efectos Niagara.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= PILARES DE ARQUITECTURA ================= -->
-    <section class="section-alt">
         <div class="container">
             <div class="row mb-5">
-                <div class="col-lg-7">
+                <div class="col-lg-8">
                     <span class="section-label">Arquitectura del Sistema</span>
-                    <h2 class="section-title mt-2">Pilares Técnicos</h2>
+                    <h2 class="section-title mt-2">Módulos de la Demo Técnica</h2>
                     <p class="section-subtitle">
-                        Tres núcleos independientes que se comunican entre sí para producir un comportamiento
-                        de combate creíble y estable en tiempo de ejecución.
+                        Demostración aislada de las mecánicas principales implementadas mediante C++ y Blueprints
+                        en un entorno de pruebas Graybox.
                     </p>
                 </div>
             </div>
+
             <div class="row g-4">
-                <!-- Pilar 1 -->
-                <div class="col-md-4">
-                    <div class="pillar-card">
-                        <div class="pillar-icon"><i class="fa-solid fa-brain"></i></div>
-                        <h4>IA Sensorial Híbrida</h4>
-                        <p>
-                            Arquitectura basada en AAIController y UAIPerceptionComponent con estímulos de
-                            visión y ruido, alimentando un Blackboard que gobierna un Behavior Tree modular
-                            escrito en C++ con nodos personalizados.
-                        </p>
-                        <div class="pillar-tag-list">
-                            <span class="pillar-tag">AAIController</span>
-                            <span class="pillar-tag">Behavior Tree</span>
-                            <span class="pillar-tag">Blackboard</span>
+
+                <!-- Módulo 1: Locomoción -->
+                <div class="col-md-6">
+                    <div class="module-card">
+                        <div class="module-video-wrap">
+                            <video src="videos/Prueba de locomocion.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <div class="module-body">
+                            <h4><i class="fa-solid fa-person-running"></i>Locomoción y Cobertura</h4>
+                            <p>
+                                Sistema modular de parkour (Vaulting / Mantle) que detecta la geometría del entorno
+                                mediante Line Trace. Incorpora una mecánica dinámica de asomo desde coberturas bajas,
+                                interpolando la cámara suavemente sin requerir botones adicionales.
+                            </p>
+                            <div class="module-tags">
+                                <span class="tech-badge small">Line Trace</span>
+                                <span class="tech-badge small">Timeline Asíncrono</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Pilar 2 -->
-                <div class="col-md-4">
-                    <div class="pillar-card">
-                        <div class="pillar-icon"><i class="fa-solid fa-crosshairs"></i></div>
-                        <h4>Balística &amp; Cobertura</h4>
-                        <p>
-                            Sistema de disparo hitscan mediante Line Trace con detección de daño localizado
-                            por hueso, combinado con un análisis procedural de puntos de cobertura sobre el
-                            NavMesh para posicionamiento táctico de los agentes.
-                        </p>
-                        <div class="pillar-tag-list">
-                            <span class="pillar-tag">Line Trace</span>
-                            <span class="pillar-tag">NavMesh</span>
-                            <span class="pillar-tag">Cobertura Procedural</span>
+
+                <!-- Módulo 2: Balística -->
+                <div class="col-md-6">
+                    <div class="module-card">
+                        <div class="module-video-wrap">
+                            <video src="videos/Prueba de disparo.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <div class="module-body">
+                            <h4><i class="fa-solid fa-crosshairs"></i>Balística Hitscan y Gunplay</h4>
+                            <p>
+                                Balística por trazado de rayos con control de cadencia asíncrono para optimizar recursos.
+                                El balanceo del arma (Aim Sway) utiliza funciones trigonométricas continuas, acompañado
+                                de un retroceso procedimental aditivo que preserva la alineación de puntería.
+                            </p>
+                            <div class="module-tags">
+                                <span class="tech-badge small">Hitscan</span>
+                                <span class="tech-badge small">AnimBP</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <!-- Pilar 3 -->
-                <div class="col-md-4">
-                    <div class="pillar-card">
-                        <div class="pillar-icon"><i class="fa-solid fa-atom"></i></div>
-                        <h4>Físicas Chaos &amp; Ragdoll</h4>
-                        <p>
-                            Simulación de Ragdoll mediante Chaos Physics con transición fluida desde animación,
-                            reforzada con Rigid Body Sleep para desactivar simulaciones inactivas y liberar
-                            costo de CPU tras el impacto.
-                        </p>
-                        <div class="pillar-tag-list">
-                            <span class="pillar-tag">Chaos Physics</span>
-                            <span class="pillar-tag">Ragdoll</span>
-                            <span class="pillar-tag">Rigid Body Sleep</span>
+
+                <!-- Módulo 3: Físicas -->
+                <div class="col-md-6">
+                    <div class="module-card">
+                        <div class="module-video-wrap">
+                            <video src="videos/Prueba de Fisicas.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <div class="module-body">
+                            <h4><i class="fa-solid fa-atom"></i>Físicas Chaos y Daño Localizado</h4>
+                            <p>
+                                Componente de salud desacoplado que registra el daño por hueso. Permite el
+                                desmembramiento con mallas polimórficas (Chaos Physics) y transiciones a estado
+                                Ragdoll, optimizado mediante Rigid Body Sleep para suspender el cálculo de CPU
+                                en cuerpos inertes.
+                            </p>
+                            <div class="module-tags">
+                                <span class="tech-badge small">Chaos Physics</span>
+                                <span class="tech-badge small">Ragdoll</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Módulo 4: IA -->
+                <div class="col-md-6">
+                    <div class="module-card">
+                        <div class="module-video-wrap">
+                            <video src="videos/Preuba de busqueda.mp4" autoplay loop muted playsinline></video>
+                        </div>
+                        <div class="module-body">
+                            <h4><i class="fa-solid fa-brain"></i>IA Táctica y Percepción</h4>
+                            <p>
+                                Arquitectura híbrida gestionada por un Behavior Tree y un AAIController. La entidad
+                                inyecta la última posición conocida en su Blackboard tras perder la visión y ejecuta
+                                vigilancia procedural (Set Focal Point) para evitar anomalías articulares.
+                            </p>
+                            <div class="module-tags">
+                                <span class="tech-badge small">Behavior Tree</span>
+                                <span class="tech-badge small">Blackboard</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
 
-    <!-- ================= GALERÍA DE EVIDENCIA GRÁFICA ================= -->
-    <section class="section-main">
+    <!-- ================= GALERÍA DE EVIDENCIA GRÁFICA / SCHEMATICS ================= -->
+    <section class="section-alt">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-7">
@@ -751,7 +247,7 @@
     </section>
 
     <!-- ================= OPTIMIZACIÓN Y DEBUGGING ================= -->
-    <section class="section-alt">
+    <section class="section-main">
         <div class="container">
             <div class="row mb-5">
                 <div class="col-lg-7">
@@ -769,8 +265,8 @@
                         <span class="debug-index">ISSUE // 01</span>
                         <h5>Fuga de Memoria en Spring Arm</h5>
                         <p>
-                            Referencias residuales del componente Spring Arm generaban acumulación de memoria
-                            en sesiones prolongadas de simulación.
+                            Creación de componentes de cámara redundantes en el bucle principal; solucionado
+                            reconfigurando el balanceo sobre el grafo de animación (AnimGraph).
                         </p>
                         <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
                     </div>
@@ -780,8 +276,8 @@
                         <span class="debug-index">ISSUE // 02</span>
                         <h5>Corrección de Capsule Riding</h5>
                         <p>
-                            El componente de cápsula del personaje "montaba" superficies inclinadas de forma
-                            incorrecta, alterando la detección de colisión en pendientes.
+                            Los fragmentos anatómicos desprendidos alteraban las colisiones; resuelto confinando
+                            perfiles físicos para interactuar únicamente con la geometría estática.
                         </p>
                         <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
                     </div>
@@ -791,8 +287,8 @@
                         <span class="debug-index">ISSUE // 03</span>
                         <h5>Supresión de Accessed None</h5>
                         <p>
-                            Errores de "Accessed None" en el evento OnPossess causados por referencias nulas
-                            al inicializar el controlador de IA antes que el Pawn.
+                            El árbol de comportamiento se ejecutaba antes de instanciar el cerebro lógico; corregido
+                            trasladando la llamada de inicialización al evento nativo OnPossess.
                         </p>
                         <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
                     </div>
@@ -802,8 +298,8 @@
                         <span class="debug-index">ISSUE // 04</span>
                         <h5>Costo de CPU Post-Mortem</h5>
                         <p>
-                            Agentes eliminados seguían consumiendo ciclos de CPU en el Behavior Tree; se
-                            redujo el costo a cero mediante desactivación explícita de componentes.
+                            Sobrecarga por simulación continua de cadáveres; mitigado suspendiendo las operaciones
+                            físicas a los 4 segundos tras entrar en reposo.
                         </p>
                         <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
                     </div>
@@ -813,10 +309,35 @@
     </section>
 
     <!-- ================= FOOTER ================= -->
-    <footer class="footer-minimal">
-        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
-            <p>&copy; 2026 AL_DEV_. Todos los derechos reservados.</p>
-            <a href="index.html#proyectos">Volver al Portafolio</a>
+    <footer id="contacto" class="footer-tech pt-5 pb-3 border-top border-cyan border-opacity-25 mt-5">
+        <div class="container">
+            <div class="row g-5 mb-5 justify-content-between">
+                <div class="col-lg-5">
+                    <h3 class="fw-bold text-white mb-4">¿Te interesa este tipo de proyectos?</h3>
+                    <p class="text-muted mb-4">Abierto a nuevas oportunidades laborales y desafíos técnicos en desarrollo de videojuegos y software.</p>
+                    <a href="mailto:alejandrolarco2020@hotmail.com" class="btn btn-cyan btn-lg px-4"><i class="fa-solid fa-paper-plane me-2"></i> Enviar Mensaje</a>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Contacto Directo</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-3"><i class="fa-solid fa-location-dot me-3 text-cyan"></i> Quito, Ecuador</li>
+                        <li class="mb-3"><i class="fa-solid fa-envelope me-3 text-cyan"></i> alejandrolarco2020@hotmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Redes Profesionales</h5>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="https://www.linkedin.com/in/alejandro-larco-03297b42a/" class="text-muted text-decoration-none hover-text-cyan transition-all"><i class="fa-brands fa-linkedin fs-5 me-2 w-20px text-center"></i> LinkedIn</a>
+                        <a href="https://github.com/Alej673" class="text-muted text-decoration-none hover-text-cyan transition-all"><i class="fa-brands fa-github fs-5 me-2 w-20px text-center"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center border-top border-secondary-subtle pt-4">
+                <p class="text-muted small mb-0">© 2026 Alejandro Larco | Desarrollado con HTML, CSS y Bootstrap 5.</p>
+            </div>
         </div>
     </footer>
 
