@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-IA: Asistente Híbrido Local/Nube | AL_DEV_</title>
+    <meta name="description" content="Caso de estudio técnico: Asistente de escritorio en Python con RAG local, enrutamiento inteligente y conciencia de entorno[span_2](start_span)[span_2](end_span).">
+
+    <!-- Bootstrap 5.3.2 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome 6.4.2 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Hojas de estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/LIA.css"> 
+</head>
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+    <header class="sticky-top nav-tech shadow-sm">
+        <nav class="container navbar navbar-expand-lg py-3">
+            <a class="navbar-brand fw-bold text-cyan font-monospace" href="index.html">AL_DEV<span class="text-white">_</span></a>
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars text-white fs-3"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-4 fw-medium text-uppercase small align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="index.html#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="index.html#sobre-mi">Sobre Mí</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="index.html#stack">Stack</a></li>
+                    <li class="nav-item"><a class="nav-link text-white nav-hover" href="index.html#proyectos">Proyectos</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-tech px-4 ms-lg-2" href="index.html#proyectos">
+                            <i class="fa-solid fa-arrow-left me-2"></i>Volver al Portafolio
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <header class="hero-project">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="badge-category">
+                        <i class="fa-solid fa-microchip me-1"></i>Python & Arquitectura Híbrida
+                    </span>
+                    <h1 class="hero-title mt-2">L-IA: Asistente Híbrido Local/Nube</h1>
+                    <p class="hero-desc">
+                        Asistente de escritorio desarrollado en Python para entorno Windows. Integra un enrutador inteligente de consultas, conciencia del entorno de trabajo (archivos y ventanas activas) y un sistema de memoria técnica a largo plazo basado en RAG con modelos locales[span_3](start_span)[span_3](end_span).
+                    </p>
+                    <div class="d-flex flex-wrap gap-2 mt-4 mb-4">
+                        <span class="tech-badge"><i class="fa-brands fa-python"></i> Python 3.11</span>
+                        <span class="tech-badge"><i class="fa-solid fa-database"></i> ChromaDB</span>
+                        <span class="tech-badge"><i class="fa-solid fa-brain"></i> Ollama (Gemma 2)</span>
+                        <span class="tech-badge"><i class="fa-solid fa-volume-high"></i> Edge-TTS</span>
+                    </div>
+                    
+                    <div class="doc-download-card mt-4">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-wrap">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-semibold">Documentación Técnica</h6>
+                                <small class="text-secondary">Arquitectura completa del proyecto (v3.2.0)[span_4](start_span)[span_4](end_span)</small>
+                            </div>
+                        </div>
+                        <a href="documentos/Documentacion_LIA.pdf" class="btn btn-download-doc w-100" download>
+                            <i class="fa-solid fa-download me-2"></i>Descargar Documentación (.pdf)
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- VIDEO PRINCIPAL EN EL HERO -->
+                <div class="col-lg-6">
+                    <div class="ratio ratio-16x9 rounded overflow-hidden shadow-lg border border-secondary">
+                        <video src="videos/videosLIA/Video L-IA.mp4" controls preload="metadata" poster="imagenes/imagenes_LIA/LIA.jpeg">
+                            Tu navegador no soporta el elemento de video.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ================= DESGLOSE DE MÓDULOS ================= -->
+    <section class="section-main">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-8">
+                    <span class="section-label">Arquitectura del Sistema</span>
+                    <h2 class="section-title mt-2">Módulos del Asistente L-IA</h2>
+                    <p class="section-subtitle">
+                        Demostración aislada de las mecánicas principales. Los videos cuentan con audio explicativo y de retroalimentación del sistema; haz clic en reproducir para verlos en acción.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4">
+
+                <!-- Módulo 1: Voz -->
+                <div class="col-md-6">
+                    <div class="module-card">
+                        <div class="module-video-wrap border-bottom border-dark">
+                            <video src="videos/videosLIA/Prueba de voz V4.mp4" controls preload="metadata"></video>
+                        </div>
+                        <div class="module-body">
+                            <h4><i class="fa-solid fa-microphone-lines"></i> Módulo de Voz y Autoconciencia</h4>
+                            <p>
+                                Subsistema de audio que dota a L-IA de canales de entrada y salida acústicos manteniendo la GPU libre[span_5](start_span)[span_5](end_span). Utiliza Edge-TTS para síntesis neuronal fluida en streaming, y Vosk junto con faster-whisper para detección de palabra clave y transcripción[span_6](start_span)[span_6](end_span).
+                            </p>
+                            <div class="module-tags">
+                                <span class="tech-badge small">Edge-TTS</span>
+                                <span class="tech-badge small">faster-whisper</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 2: Workspace -->
+                <div class="col-md-6">
+                    <div class="module-card">
+                        <div class="module-video-wrap border-bottom border-dark">
+                            <video src="videos/videosLIA/Prueba de lectura_codigo.mp4" controls preload="metadata"></video>
+                        </div>
+                        <div class="module-body">
+                            <h4><i class="fa-solid fa-desktop"></i> Conciencia de Entorno (Workspace)</h4>
+                            <p>
+                                Detección de la ventana activa en Windows mediante pygetwindow[span_7](start_span)[span_7](end_span). El sistema lee automáticamente el archivo en pantalla y genera un micro-resumen en caché para evitar preguntas repetitivas sin necesidad de copiar y pegar el código[span_8](start_span)[span_8](end_span).
+                            </p>
+                            <div class="module-tags">
+                                <span class="tech-badge small">pygetwindow</span>
+                                <span class="tech-badge small">Caché Contextual</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 3: Git & Riesgos -->
+                <div class="col-md-6">
+                    <div class="module-card">
+                        <div class="module-video-wrap border-bottom border-dark">
+                            <video src="videos/videosLIA/prueba de git.mp4" controls preload="metadata"></video>
+                        </div>
+                        <div class="module-body">
+                            <h4><i class="fa-brands fa-git-alt"></i> Control de Riesgos y Git</h4>
+                            <p>
+                                Integración con el control de versiones local. Incorpora un Tool Manager que bloquea modificaciones destructivas (Nivel 2), exigiendo una confirmación visual asíncrona por parte del usuario antes de ejecutar comandos críticos como git commit o push[span_9](start_span)[span_9](end_span).
+                            </p>
+                            <div class="module-tags">
+                                <span class="tech-badge small">Tool Manager</span>
+                                <span class="tech-badge small">Git CLI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Módulo 4: RAG -->
+                <div class="col-md-6">
+                    <div class="module-card">
+                        <div class="module-video-wrap border-bottom border-dark">
+                            <video src="videos/videosLIA/Prueba de RAG.mp4" controls preload="metadata"></video>
+                        </div>
+                        <div class="module-body">
+                            <h4><i class="fa-solid fa-network-wired"></i> Segundo Cerebro (RAG Local)</h4>
+                            <p>
+                                Memoria a largo plazo con aislamiento de hardware. Utiliza ChromaDB y el modelo all-MiniLM-L6-v2 procesado 100% en CPU para indexar documentación, inyectando fragmentos relevantes de forma dinámica en las respuestas del modelo[span_10](start_span)[span_10](end_span).
+                            </p>
+                            <div class="module-tags">
+                                <span class="tech-badge small">ChromaDB</span>
+                                <span class="tech-badge small">all-MiniLM-L6-v2</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= GALERÍA ================= -->
+    <section class="section-alt">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-7">
+                    <span class="section-label">Evidencia Visual</span>
+                    <h2 class="section-title mt-2">Interfaz & Despliegue</h2>
+                    <p class="section-subtitle">
+                        Capturas del comportamiento de la interfaz emergente de L-IA en diferentes estados de operación y carga de modelos.
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrap">
+                            <img src="imagenes/imagenes_LIA/Interfaz_LIA.png" alt="Interfaz gráfica principal de L-IA" loading="lazy">
+                        </div>
+                        <div class="gallery-caption">
+                            <h6>Interfaz Principal</h6>
+                            <p>Ventana flotante renderizada mediante Tkinter.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrap">
+                            <img src="imagenes/imagenes_LIA/Modelos_LIA.png" alt="Carga de modelos locales" loading="lazy">
+                        </div>
+                        <div class="gallery-caption">
+                            <h6>Inferencia Local</h6>
+                            <p>Ejecución de respuestas generadas localmente.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrap">
+                            <img src="imagenes/imagenes_LIA/Streaming_LIA.png" alt="Bloqueo de seguridad Nivel 2" loading="lazy">
+                        </div>
+                        <div class="gallery-caption">
+                            <h6>Bloqueo de Seguridad</h6>
+                            <p>Alerta emergente para permisos de Nivel 2.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="gallery-card">
+                        <div class="gallery-img-wrap">
+                            <img src="imagenes/imagenes_LIA/Workspace_LIA.png" alt="Lectura de documento en el Workspace" loading="lazy">
+                        </div>
+                        <div class="gallery-caption">
+                            <h6>Lectura de Workspace</h6>
+                            <p>Detección de contenido activo en pantalla.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= OPTIMIZACIÓN Y DEBUGGING ================= -->
+    <section class="section-main">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-7">
+                    <span class="section-label">Lecciones Técnicas</span>
+                    <h2 class="section-title mt-2">Resolución de Problemas Críticos</h2>
+                    <p class="section-subtitle">
+                        Errores documentados y solucionados durante el desarrollo arquitectónico de las fases 3 a la 7[span_11](start_span)[span_11](end_span).
+                    </p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="debug-item">
+                        <span class="debug-index">ISSUE // 01</span>
+                        <h5>El "Incidente de las Descargas"</h5>
+                        <p>
+                            Un script de pruebas borró accidentalmente 5 GB de instaladores locales[span_12](start_span)[span_12](end_span). Solucionado implementando el Tool Manager como embudo obligatorio de Nivel 2 con confirmación humana explícita[span_13](start_span)[span_13](end_span).
+                        </p>
+                        <span class="debug-fix-tag"><i class="fa-solid fa-shield-halved"></i>Mitigado</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="debug-item">
+                        <span class="debug-index">ISSUE // 02</span>
+                        <h5>Amnesia Post-Lectura</h5>
+                        <p>
+                            El modelo perdía el contexto en preguntas de seguimiento[span_14](start_span)[span_14](end_span). Resuelto con la persistencia del Workspace Activo en SQLite y la inyección silenciosa de un micro-resumen técnico en el prompt[span_15](start_span)[span_15](end_span).
+                        </p>
+                        <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="debug-item">
+                        <span class="debug-index">ISSUE // 03</span>
+                        <h5>Error 400 en Gemini SDK</h5>
+                        <p>
+                            Conflicto al combinar búsquedas web con herramientas locales y esquemas de diccionarios planos[span_16](start_span)[span_16](end_span). Corregido refactorizando las funciones hacia objetos ejecutables tipados (callables) nativos de Python[span_17](start_span)[span_17](end_span).
+                        </p>
+                        <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="debug-item">
+                        <span class="debug-index">ISSUE // 04</span>
+                        <h5>Excepción en Ingesta RAG</h5>
+                        <p>
+                            El fragmentador colapsaba al recibir diccionarios en lugar de texto plano durante la vectorización inicial[span_18](start_span)[span_18](end_span). Solucionado integrando un parser defensivo en la rutina de ingesta[span_19](start_span)[span_19](end_span).
+                        </p>
+                        <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer id="contacto" class="footer-tech pt-5 pb-3 border-top border-cyan border-opacity-25 mt-5">
+        <div class="container">
+            <div class="row g-5 mb-5 justify-content-between">
+                <div class="col-lg-5">
+                    <h3 class="fw-bold text-white mb-4">¿Te interesa este tipo de proyectos?</h3>
+                    <p class="text-muted mb-4">Abierto a nuevas oportunidades laborales y desafíos técnicos en desarrollo de software e integración de IA.</p>
+                    <a href="mailto:alejandrolarco2020@hotmail.com" class="btn btn-cyan btn-lg px-4"><i class="fa-solid fa-paper-plane me-2"></i> Enviar Mensaje</a>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Contacto Directo</h5>
+                    <ul class="list-unstyled text-muted">
+                        <li class="mb-3"><i class="fa-solid fa-location-dot me-3 text-cyan"></i> Quito, Ecuador</li>
+                        <li class="mb-3"><i class="fa-solid fa-envelope me-3 text-cyan"></i> alejandrolarco2020@hotmail.com</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Redes Profesionales</h5>
+                    <div class="d-flex flex-column gap-3">
+                        <a href="https://www.linkedin.com/in/alejandro-larco-03297b42a/" class="text-muted text-decoration-none hover-text-cyan transition-all" target="_blank"><i class="fa-brands fa-linkedin fs-5 me-2 w-20px text-center"></i> LinkedIn</a>
+                        <a href="https://github.com/Alej673" class="text-muted text-decoration-none hover-text-cyan transition-all" target="_blank"><i class="fa-brands fa-github fs-5 me-2 w-20px text-center"></i> GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center border-top border-secondary-subtle pt-4">
+                <p class="text-muted small mb-0">© 2026 Alejand
