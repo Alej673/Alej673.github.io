@@ -1,0 +1,432 @@
+/* ==========================================================================
+   TEMA: ERP ARTE TITI_VAL (Dark Glassmorphism & Purple/Gold Palette)
+   ========================================================================== */
+
+:root {
+    /* Paleta Titi_Val Adaptada a Dark Mode */
+    --titi-primary: #a855f7;       /* Púrpura brillante */
+    --titi-primary-glow: rgba(168, 85, 247, 0.4);
+    --titi-secondary: #f59e0b;     /* Oro / Ámbar */
+    --titi-bg-dark: #0f0a1a;       /* Fondo morado muy oscuro */
+    --titi-card-bg: rgba(30, 20, 50, 0.4); /* Cristal oscuro */
+    --titi-card-border: rgba(168, 85, 247, 0.15);
+    
+    /* Tipografías */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--titi-bg-dark);
+    color: #e2e8f0;
+    font-family: var(--font-body);
+    /* Sutil gradiente de fondo para dar profundidad */
+    background-image: radial-gradient(circle at 15% 50%, rgba(168, 85, 247, 0.05), transparent 25%),
+                      radial-gradient(circle at 85% 30%, rgba(245, 158, 11, 0.05), transparent 25%);
+    background-attachment: fixed;
+}
+
+/* ================= TIPOGRAFÍA Y ETIQUETAS ================= */
+h1, h2, h3, h4, h5, h6, .hero-title, .section-title {
+    font-family: var(--font-heading);
+}
+
+.text-cyan {
+    color: var(--titi-primary) !important; /* Reemplaza el cyan del UE5 por púrpura */
+}
+
+.badge-category {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--titi-secondary);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.tech-badge {
+    background: rgba(168, 85, 247, 0.1);
+    color: #d8b4fe;
+    border: 1px solid var(--titi-card-border);
+    padding: 0.35rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: rgba(168, 85, 247, 0.2);
+    border-color: var(--titi-primary);
+    transform: translateY(-2px);
+}
+
+/* ================= HERO SECTION ================= */
+.hero-project {
+    padding: 100px 0 80px;
+    position: relative;
+    border-bottom: 1px solid var(--titi-card-border);
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 0%, #d8b4fe 50%, var(--titi-primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-desc {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+/* ================= TARJETA DE DOCUMENTACIÓN ================= */
+.doc-download-card {
+    background: var(--titi-card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--titi-card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.icon-wrap {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(245, 158, 11, 0.2));
+    border: 1px solid var(--titi-card-border);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--titi-secondary);
+}
+
+.btn-download-doc {
+    background: linear-gradient(135deg, var(--titi-primary), #7e22ce);
+    color: white;
+    font-weight: 600;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--titi-primary-glow);
+}
+
+.btn-download-doc:hover {
+    background: linear-gradient(135deg, #b975f8, #9333ea);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--titi-primary-glow);
+}
+
+/* ================= MÓDULOS DE VIDEO (GLASSMORPHISM) ================= */
+.section-main {
+    padding: 80px 0;
+}
+
+.section-label {
+    color: var(--titi-secondary);
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+.module-card {
+    background: var(--titi-card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--titi-card-border);
+    border-radius: 16px;
+    overflow: hidden;
+    height: 100%;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--titi-primary);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.15);
+}
+
+.module-video-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #000;
+    overflow: hidden;
+    cursor: pointer;
+    border-bottom: 1px solid var(--titi-card-border);
+}
+
+.module-video-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.module-card:hover .module-video-wrap video {
+    transform: scale(1.02);
+}
+
+/* Overlay de reproducción: clic para ver, en vez de autoplay */
+.video-play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(15, 10, 26, 0.55), rgba(126, 34, 206, 0.35));
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.video-play-overlay i {
+    font-size: 3rem;
+    color: #ffffff;
+    text-shadow: 0 4px 15px var(--titi-primary-glow);
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.module-video-wrap:hover .video-play-overlay {
+    background: linear-gradient(135deg, rgba(15, 10, 26, 0.65), rgba(126, 34, 206, 0.45));
+}
+
+.module-video-wrap:hover .video-play-overlay i {
+    transform: scale(1.15);
+    color: var(--titi-secondary);
+}
+
+/* Al reproducirse, el overlay se desvanece y deja ver el video limpio */
+.module-video-wrap.is-playing .video-play-overlay {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.module-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.module-body h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #f8fafc;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.module-body h4 i {
+    color: var(--titi-primary);
+}
+
+.module-body p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.module-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+/* ================= GALERÍA UI ================= */
+.section-alt {
+    padding: 80px 0;
+    background-color: rgba(168, 85, 247, 0.02);
+    border-top: 1px solid var(--titi-card-border);
+    border-bottom: 1px solid var(--titi-card-border);
+}
+
+.gallery-card {
+    background: var(--titi-card-bg);
+    border: 1px solid var(--titi-card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.gallery-card:hover {
+    border-color: var(--titi-secondary);
+}
+
+.gallery-img-wrap {
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #1e293b;
+}
+
+.gallery-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-img-wrap img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    padding: 1.2rem;
+}
+
+.gallery-caption h6 {
+    font-weight: 600;
+    color: #f8fafc;
+    margin-bottom: 0.5rem;
+}
+
+.gallery-caption p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 0;
+}
+
+/* ================================================================
+   REPOSITORIO — tarjeta de cristal, acento oro → púrpura
+   ================================================================ */
+.repo-section {
+    position: relative;
+}
+
+.repo-card {
+    background: var(--titi-card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--titi-card-border);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    transition: all 0.35s ease;
+}
+
+.repo-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--titi-secondary), var(--titi-primary));
+}
+
+.repo-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--titi-primary);
+    box-shadow: 0 14px 34px rgba(168, 85, 247, 0.18);
+}
+
+.repo-card p {
+    margin-bottom: 1.25rem;
+}
+
+.repo-icon {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.25), rgba(168, 85, 247, 0.25));
+    color: var(--titi-secondary);
+    transition: transform 0.3s ease;
+}
+
+.repo-card:hover .repo-icon {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.btn-repo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid var(--titi-primary);
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-repo:hover {
+    background: linear-gradient(135deg, var(--titi-primary), #7e22ce);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px var(--titi-primary-glow);
+}
+
+.repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.repo-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.repo-meta i {
+    color: var(--titi-secondary);
+}
+
+/* ================= FOOTER Y OTROS ================= */
+.btn-cyan {
+    background-color: var(--titi-primary);
+    color: white;
+    border: none;
+}
+.btn-cyan:hover {
+    background-color: #9333ea;
+    color: white;
+}
+.border-cyan {
+    border-color: var(--titi-primary) !important;
+}
+.hover-text-cyan:hover {
+    color: var(--titi-primary) !important;
+}
+
+/* ================= RESPONSIVIDAD ================= */
+@media (max-width: 767.98px) {
+    .repo-card {
+        padding: 1.6rem;
+    }
+}

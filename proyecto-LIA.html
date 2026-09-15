@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L-IA: Asistente Híbrido Local/Nube | AL_DEV_</title>
-    <meta name="description" content="Caso de estudio técnico: Asistente de escritorio en Python con RAG local, enrutamiento inteligente y conciencia de entorno[span_2](start_span)[span_2](end_span).">
+    <meta name="description" content="Caso de estudio técnico: Asistente de escritorio en Python con RAG local, enrutamiento inteligente y conciencia de entorno.">
 
     <!-- Bootstrap 5.3.2 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +17,7 @@
 
     <!-- Hojas de estilos -->
     <link rel="stylesheet" href="css/estilos.css">
-    <link rel="stylesheet" href="css/LIA.css"> 
+    <link rel="stylesheet" href="css/LIA.css">
 </head>
 <body>
 
@@ -54,7 +54,9 @@
                     </span>
                     <h1 class="hero-title mt-2">L-IA: Asistente Híbrido Local/Nube</h1>
                     <p class="hero-desc">
-                        Asistente de escritorio desarrollado en Python para entorno Windows. Integra un enrutador inteligente de consultas, conciencia del entorno de trabajo (archivos y ventanas activas) y un sistema de memoria técnica a largo plazo basado en RAG con modelos locales[span_3](start_span)[span_3](end_span).
+                        Asistente de escritorio desarrollado en Python para entorno Windows. Integra un enrutador
+                        inteligente de consultas, conciencia del entorno de trabajo (archivos y ventanas activas) y
+                        un sistema de memoria técnica a largo plazo basado en RAG con modelos locales.
                     </p>
                     <div class="d-flex flex-wrap gap-2 mt-4 mb-4">
                         <span class="tech-badge"><i class="fa-brands fa-python"></i> Python 3.11</span>
@@ -62,7 +64,7 @@
                         <span class="tech-badge"><i class="fa-solid fa-brain"></i> Ollama (Gemma 2)</span>
                         <span class="tech-badge"><i class="fa-solid fa-volume-high"></i> Edge-TTS</span>
                     </div>
-                    
+
                     <div class="doc-download-card mt-4">
                         <div class="d-flex align-items-center gap-3 mb-3">
                             <div class="icon-wrap">
@@ -70,7 +72,7 @@
                             </div>
                             <div>
                                 <h6 class="mb-0 fw-semibold">Documentación Técnica</h6>
-                                <small class="text-secondary">Arquitectura completa del proyecto (v3.2.0)[span_4](start_span)[span_4](end_span)</small>
+                                <small class="text-secondary">Arquitectura completa del proyecto (v3.2.0)</small>
                             </div>
                         </div>
                         <a href="documentos/Documentacion_LIA.pdf" class="btn btn-download-doc w-100" download>
@@ -78,7 +80,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- VIDEO PRINCIPAL EN EL HERO -->
                 <div class="col-lg-6">
                     <div class="ratio ratio-16x9 rounded overflow-hidden shadow-lg border border-secondary">
@@ -99,7 +101,8 @@
                     <span class="section-label">Arquitectura del Sistema</span>
                     <h2 class="section-title mt-2">Módulos del Asistente L-IA</h2>
                     <p class="section-subtitle">
-                        Demostración aislada de las mecánicas principales. Los videos cuentan con audio explicativo y de retroalimentación del sistema; haz clic en reproducir para verlos en acción.
+                        Demostración aislada de las mecánicas principales. Los videos cuentan con audio explicativo
+                        y de retroalimentación del sistema; haz clic en reproducir para verlos en acción.
                     </p>
                 </div>
             </div>
@@ -115,7 +118,9 @@
                         <div class="module-body">
                             <h4><i class="fa-solid fa-microphone-lines"></i> Módulo de Voz y Autoconciencia</h4>
                             <p>
-                                Subsistema de audio que dota a L-IA de canales de entrada y salida acústicos manteniendo la GPU libre[span_5](start_span)[span_5](end_span). Utiliza Edge-TTS para síntesis neuronal fluida en streaming, y Vosk junto con faster-whisper para detección de palabra clave y transcripción[span_6](start_span)[span_6](end_span).
+                                Subsistema de audio que dota a L-IA de canales de entrada y salida acústicos manteniendo
+                                la GPU libre. Utiliza Edge-TTS para síntesis neuronal fluida en streaming, y Vosk junto
+                                con faster-whisper para detección de palabra clave y transcripción.
                             </p>
                             <div class="module-tags">
                                 <span class="tech-badge small">Edge-TTS</span>
@@ -134,7 +139,9 @@
                         <div class="module-body">
                             <h4><i class="fa-solid fa-desktop"></i> Conciencia de Entorno (Workspace)</h4>
                             <p>
-                                Detección de la ventana activa en Windows mediante pygetwindow[span_7](start_span)[span_7](end_span). El sistema lee automáticamente el archivo en pantalla y genera un micro-resumen en caché para evitar preguntas repetitivas sin necesidad de copiar y pegar el código[span_8](start_span)[span_8](end_span).
+                                Detección de la ventana activa en Windows mediante pygetwindow. El sistema lee
+                                automáticamente el archivo en pantalla y genera un micro-resumen en caché para evitar
+                                preguntas repetitivas sin necesidad de copiar y pegar el código.
                             </p>
                             <div class="module-tags">
                                 <span class="tech-badge small">pygetwindow</span>
@@ -153,7 +160,9 @@
                         <div class="module-body">
                             <h4><i class="fa-brands fa-git-alt"></i> Control de Riesgos y Git</h4>
                             <p>
-                                Integración con el control de versiones local. Incorpora un Tool Manager que bloquea modificaciones destructivas (Nivel 2), exigiendo una confirmación visual asíncrona por parte del usuario antes de ejecutar comandos críticos como git commit o push[span_9](start_span)[span_9](end_span).
+                                Integración con el control de versiones local. Incorpora un Tool Manager que bloquea
+                                modificaciones destructivas (Nivel 2), exigiendo una confirmación visual asíncrona por
+                                parte del usuario antes de ejecutar comandos críticos como git commit o push.
                             </p>
                             <div class="module-tags">
                                 <span class="tech-badge small">Tool Manager</span>
@@ -172,7 +181,9 @@
                         <div class="module-body">
                             <h4><i class="fa-solid fa-network-wired"></i> Segundo Cerebro (RAG Local)</h4>
                             <p>
-                                Memoria a largo plazo con aislamiento de hardware. Utiliza ChromaDB y el modelo all-MiniLM-L6-v2 procesado 100% en CPU para indexar documentación, inyectando fragmentos relevantes de forma dinámica en las respuestas del modelo[span_10](start_span)[span_10](end_span).
+                                Memoria a largo plazo con aislamiento de hardware. Utiliza ChromaDB y el modelo
+                                all-MiniLM-L6-v2 procesado 100% en CPU para indexar documentación, inyectando
+                                fragmentos relevantes de forma dinámica en las respuestas del modelo.
                             </p>
                             <div class="module-tags">
                                 <span class="tech-badge small">ChromaDB</span>
@@ -194,7 +205,8 @@
                     <span class="section-label">Evidencia Visual</span>
                     <h2 class="section-title mt-2">Interfaz & Despliegue</h2>
                     <p class="section-subtitle">
-                        Capturas del comportamiento de la interfaz emergente de L-IA en diferentes estados de operación y carga de modelos.
+                        Capturas del comportamiento de la interfaz emergente de L-IA en diferentes estados de operación
+                        y carga de modelos.
                     </p>
                 </div>
             </div>
@@ -255,7 +267,7 @@
                     <span class="section-label">Lecciones Técnicas</span>
                     <h2 class="section-title mt-2">Resolución de Problemas Críticos</h2>
                     <p class="section-subtitle">
-                        Errores documentados y solucionados durante el desarrollo arquitectónico de las fases 3 a la 7[span_11](start_span)[span_11](end_span).
+                        Errores documentados y solucionados durante el desarrollo arquitectónico de las fases 3 a la 7.
                     </p>
                 </div>
             </div>
@@ -265,7 +277,9 @@
                         <span class="debug-index">ISSUE // 01</span>
                         <h5>El "Incidente de las Descargas"</h5>
                         <p>
-                            Un script de pruebas borró accidentalmente 5 GB de instaladores locales[span_12](start_span)[span_12](end_span). Solucionado implementando el Tool Manager como embudo obligatorio de Nivel 2 con confirmación humana explícita[span_13](start_span)[span_13](end_span).
+                            Un script de pruebas borró accidentalmente 5 GB de instaladores locales. Solucionado
+                            implementando el Tool Manager como embudo obligatorio de Nivel 2 con confirmación humana
+                            explícita.
                         </p>
                         <span class="debug-fix-tag"><i class="fa-solid fa-shield-halved"></i>Mitigado</span>
                     </div>
@@ -275,7 +289,8 @@
                         <span class="debug-index">ISSUE // 02</span>
                         <h5>Amnesia Post-Lectura</h5>
                         <p>
-                            El modelo perdía el contexto en preguntas de seguimiento[span_14](start_span)[span_14](end_span). Resuelto con la persistencia del Workspace Activo en SQLite y la inyección silenciosa de un micro-resumen técnico en el prompt[span_15](start_span)[span_15](end_span).
+                            El modelo perdía el contexto en preguntas de seguimiento. Resuelto con la persistencia del
+                            Workspace Activo en SQLite y la inyección silenciosa de un micro-resumen técnico en el prompt.
                         </p>
                         <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
                     </div>
@@ -285,7 +300,9 @@
                         <span class="debug-index">ISSUE // 03</span>
                         <h5>Error 400 en Gemini SDK</h5>
                         <p>
-                            Conflicto al combinar búsquedas web con herramientas locales y esquemas de diccionarios planos[span_16](start_span)[span_16](end_span). Corregido refactorizando las funciones hacia objetos ejecutables tipados (callables) nativos de Python[span_17](start_span)[span_17](end_span).
+                            Conflicto al combinar búsquedas web con herramientas locales y esquemas de diccionarios
+                            planos. Corregido refactorizando las funciones hacia objetos ejecutables tipados (callables)
+                            nativos de Python.
                         </p>
                         <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
                     </div>
@@ -295,9 +312,76 @@
                         <span class="debug-index">ISSUE // 04</span>
                         <h5>Excepción en Ingesta RAG</h5>
                         <p>
-                            El fragmentador colapsaba al recibir diccionarios en lugar de texto plano durante la vectorización inicial[span_18](start_span)[span_18](end_span). Solucionado integrando un parser defensivo en la rutina de ingesta[span_19](start_span)[span_19](end_span).
+                            El fragmentador colapsaba al recibir diccionarios en lugar de texto plano durante la
+                            vectorización inicial. Solucionado integrando un parser defensivo en la rutina de ingesta.
                         </p>
                         <span class="debug-fix-tag"><i class="fa-solid fa-check"></i>Resuelto</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= REPOSITORIO / CÓDIGO FUENTE ================= -->
+    <section class="section-alt repo-section">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-7">
+                    <span class="section-label">Código Fuente</span>
+                    <h2 class="section-title mt-2">Repositorio del Proyecto</h2>
+                    <p class="section-subtitle">
+                        Acceso directo al código de L-IA: el enrutador de consultas, el Tool Manager, el pipeline
+                        de RAG local y el resto de la arquitectura, en Python.
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-4 align-items-stretch">
+                <!-- Mock de terminal -->
+                <div class="col-lg-8">
+                    <div class="terminal-card">
+                        <div class="terminal-titlebar">
+                            <span class="terminal-dot dot-red"></span>
+                            <span class="terminal-dot dot-yellow"></span>
+                            <span class="terminal-dot dot-green"></span>
+                            <span class="terminal-titletext">alejandro@AL_DEV: ~/L-IA</span>
+                        </div>
+                        <div class="terminal-body">
+                            <p class="terminal-line"><span class="terminal-prompt">$</span> git clone https://github.com/Alej673/L-IA.git</p>
+                            <p class="terminal-line"><span class="terminal-prompt">$</span> cd L-IA &amp;&amp; pip install -r requirements.txt</p>
+                            <p class="terminal-line"><span class="terminal-prompt">$</span> python main.py</p>
+                            <p class="terminal-line terminal-output">&gt; Cargando modelos locales (Ollama · Gemma 2)...</p>
+                            <p class="terminal-line terminal-output">&gt; RAG inicializado — ChromaDB conectado.</p>
+                            <p class="terminal-line terminal-output terminal-ok">&gt; L-IA lista. Esperando instrucciones<span class="terminal-cursor">_</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de acceso al repo -->
+                <div class="col-lg-4">
+                    <div class="repo-card h-100">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="icon-wrap repo-icon">
+                                <i class="fa-brands fa-github"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-0 fw-semibold">Repositorio</h6>
+                                <small class="text-secondary">Código fuente completo</small>
+                            </div>
+                        </div>
+                        <p class="text-secondary small mb-3">
+                            Revisa la arquitectura híbrida local/nube, el sistema de memoria RAG y el Tool Manager
+                            de control de riesgos directamente en GitHub.
+                        </p>
+                        <a href="https://github.com/Alej673/L-IA" target="_blank" rel="noopener noreferrer" class="btn btn-repo w-100">
+                            <i class="fa-brands fa-github me-2"></i>Ver en GitHub
+                            <i class="fa-solid fa-arrow-up-right-from-square ms-2 small"></i>
+                        </a>
+                        <div class="repo-meta">
+                            <span><i class="fa-solid fa-code-branch"></i>L-IA</span>
+                            <span><i class="fa-solid fa-user"></i>Alej673</span>
+                            <span><i class="fa-brands fa-python"></i>Python</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -332,4 +416,12 @@
             </div>
 
             <div class="text-center border-top border-secondary-subtle pt-4">
-                <p class="text-muted small mb-0">© 2026 Alejand
+                <p class="text-muted small mb-0">© 2026 Alejandro Larco | Desarrollado con HTML, CSS y Bootstrap 5.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5.3.2 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

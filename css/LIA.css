@@ -1,6 +1,7 @@
 /* ==========================================================================
    L-IA PROJECT STYLES (css/LIA.css)
    v2 — animaciones, hover states y responsividad reforzada
+   v3 — sección de repositorio con mock de terminal
    ========================================================================== */
 
 :root {
@@ -15,6 +16,11 @@
     --accent-cyan: #00f2fe;
     --accent-cyan-dim: rgba(0, 242, 254, 0.15);
     --accent-cyan-hover: #4facfe;
+
+    /* Verde terminal: usado en la sección de repositorio para reforzar
+       la identidad "línea de comandos" de un asistente que vive en Git/CLI */
+    --accent-term: #4ade80;
+    --accent-term-dim: rgba(74, 222, 128, 0.14);
 
     --border-color: rgba(255, 255, 255, 0.1);
     --border-cyan: rgba(0, 242, 254, 0.3);
@@ -63,7 +69,8 @@ a:focus-visible,
 button:focus-visible,
 .btn-tech:focus-visible,
 .btn-cyan:focus-visible,
-.btn-download-doc:focus-visible {
+.btn-download-doc:focus-visible,
+.btn-repo:focus-visible {
     outline: 2px solid var(--accent-cyan);
     outline-offset: 3px;
     border-radius: 4px;
@@ -583,6 +590,180 @@ button:focus-visible,
     box-shadow: 0 0 12px rgba(74, 222, 128, 0.15);
 }
 
+/* ================================================================
+   REPOSITORIO — mock de terminal + tarjeta de acceso a GitHub
+   ================================================================ */
+.repo-section {
+    position: relative;
+}
+
+/* --- Mock de terminal --- */
+.terminal-card {
+    background-color: #0d1117;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.6);
+    transition: var(--transition-smooth);
+}
+
+.terminal-card:hover {
+    border-color: rgba(74, 222, 128, 0.35);
+    box-shadow: 0 20px 45px -20px rgba(74, 222, 128, 0.18);
+}
+
+.terminal-titlebar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1rem;
+    background-color: #161b22;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.terminal-dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot-red { background-color: #ff5f56; }
+.dot-yellow { background-color: #ffbd2e; }
+.dot-green { background-color: #27c93f; }
+
+.terminal-titletext {
+    margin-left: 0.75rem;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+}
+
+.terminal-body {
+    padding: 1.5rem 1.6rem 1.8rem;
+    font-family: var(--font-mono);
+    font-size: 0.88rem;
+    line-height: 1.9;
+}
+
+.terminal-line {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+    color: var(--text-primary);
+}
+
+.terminal-prompt {
+    color: var(--accent-term);
+    margin-right: 0.5rem;
+    font-weight: 600;
+}
+
+.terminal-output {
+    color: var(--text-secondary);
+}
+
+.terminal-ok {
+    color: var(--accent-term);
+}
+
+.terminal-cursor {
+    display: inline-block;
+    color: var(--accent-term);
+    animation: cursor-blink 1s steps(1) infinite;
+}
+
+@keyframes cursor-blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* --- Tarjeta de acceso al repositorio --- */
+.repo-card {
+    background-color: var(--bg-card);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    border-radius: 12px;
+    padding: 1.6rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.repo-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-term), transparent);
+}
+
+.repo-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-term);
+    box-shadow: 0 12px 32px rgba(74, 222, 128, 0.12);
+}
+
+.repo-card p {
+    flex-grow: 1;
+}
+
+.repo-icon {
+    background-color: var(--accent-term-dim);
+    color: var(--accent-term);
+}
+
+.repo-card:hover .repo-icon {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.btn-repo {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+    border-radius: 6px;
+    padding: 0.65rem 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.btn-repo:hover {
+    background-color: var(--accent-term);
+    border-color: var(--accent-term);
+    color: #06210f !important;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px var(--accent-term-dim);
+}
+
+.repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.repo-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.repo-meta i {
+    color: var(--accent-term);
+}
+
 /* ================= FOOTER ================= */
 .hover-text-cyan {
     position: relative;
@@ -690,6 +871,15 @@ button:focus-visible,
     .footer-tech .btn-cyan {
         width: 100%;
     }
+
+    .terminal-body {
+        font-size: 0.78rem;
+        padding: 1.2rem 1.2rem 1.4rem;
+    }
+
+    .repo-card {
+        margin-top: 1.5rem;
+    }
 }
 
 /* Móviles pequeños */
@@ -722,6 +912,11 @@ button:focus-visible,
     }
 
     .module-card, .gallery-card, .debug-item {
+        opacity: 1;
+    }
+
+    .terminal-cursor {
+        animation: none;
         opacity: 1;
     }
 }

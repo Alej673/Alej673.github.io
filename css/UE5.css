@@ -10,6 +10,10 @@
     --bg-card: #222839;
     --accent: #0ea5e9;
     --accent-light: #38bdf8;
+    /* Acento secundario: identidad "HUD táctico" (brackets, tags, estado) */
+    --accent-secondary: #f59e0b;
+    --accent-secondary-soft: rgba(245, 158, 11, 0.14);
+    --accent-ok: #4ade80;
     --text-main: #e2e8f0;
     --text-secondary: #94a3b8;
     --border-soft: rgba(148, 163, 184, 0.12);
@@ -35,7 +39,79 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Hero */
+/* ============================================================
+   Sistema HUD: corner brackets (identidad visual del proyecto)
+   ============================================================ */
+
+/* Marco completo (4 esquinas) — elementos protagonistas */
+.hud-frame {
+    position: relative;
+}
+
+.hud-frame::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    z-index: 2;
+    background-image:
+        linear-gradient(var(--accent-secondary), var(--accent-secondary)),
+        linear-gradient(var(--accent-secondary), var(--accent-secondary)),
+        linear-gradient(var(--accent-secondary), var(--accent-secondary)),
+        linear-gradient(var(--accent-secondary), var(--accent-secondary)),
+        linear-gradient(var(--accent-secondary), var(--accent-secondary)),
+        linear-gradient(var(--accent-secondary), var(--accent-secondary)),
+        linear-gradient(var(--accent-secondary), var(--accent-secondary)),
+        linear-gradient(var(--accent-secondary), var(--accent-secondary));
+    background-repeat: no-repeat;
+    background-size:
+        2px 20px, 20px 2px,
+        2px 20px, 20px 2px,
+        2px 20px, 20px 2px,
+        2px 20px, 20px 2px;
+    background-position:
+        top left, top left,
+        top right, top right,
+        bottom left, bottom left,
+        bottom right, bottom right;
+    opacity: 0.85;
+    transition: opacity 0.25s ease;
+}
+
+.hud-frame:hover::before {
+    opacity: 1;
+}
+
+/* Marco sutil (2 esquinas opuestas) — tarjetas secundarias, en cyan */
+.hud-corner {
+    position: relative;
+}
+
+.hud-corner::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    pointer-events: none;
+    z-index: 2;
+    background-image:
+        linear-gradient(var(--accent-light), var(--accent-light)),
+        linear-gradient(var(--accent-light), var(--accent-light)),
+        linear-gradient(var(--accent-light), var(--accent-light)),
+        linear-gradient(var(--accent-light), var(--accent-light));
+    background-repeat: no-repeat;
+    background-size: 2px 14px, 14px 2px, 2px 14px, 14px 2px;
+    background-position: top left, top left, bottom right, bottom right;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.hud-corner:hover::after {
+    opacity: 0.9;
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
 .hero-project {
     padding: 7rem 0 4.5rem 0;
     position: relative;
@@ -44,6 +120,29 @@ html {
         radial-gradient(ellipse 80% 60% at 15% 0%, rgba(14, 165, 233, 0.16), transparent 60%),
         radial-gradient(ellipse 60% 50% at 100% 20%, rgba(56, 189, 248, 0.10), transparent 60%),
         var(--bg-main);
+}
+
+/* Scanline táctico muy sutil sobre el hero */
+.hero-project::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: repeating-linear-gradient(
+        to bottom,
+        rgba(148, 163, 184, 0.035) 0px,
+        rgba(148, 163, 184, 0.035) 1px,
+        transparent 1px,
+        transparent 3px
+    );
+    mix-blend-mode: overlay;
+}
+
+.hero-badges-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
 }
 
 .badge-category {
@@ -57,6 +156,36 @@ html {
     border-radius: 50px;
     letter-spacing: 0.03em;
     display: inline-block;
+}
+
+/* Indicador de estado tipo HUD ("SISTEMA // OPERATIVO") */
+.status-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--accent-ok);
+    background: rgba(74, 222, 128, 0.08);
+    border: 1px solid rgba(74, 222, 128, 0.28);
+    padding: 0.42rem 0.85rem;
+    border-radius: 50px;
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent-ok);
+    box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+    animation: status-pulse 1.8s infinite;
+}
+
+@keyframes status-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.55); }
+    70%  { box-shadow: 0 0 0 7px rgba(74, 222, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
 }
 
 .hero-title {
@@ -319,6 +448,134 @@ html {
     border-radius: 6px;
 }
 
+/* ============================================================
+   Video completo + Repositorio
+   ============================================================ */
+.video-section {
+    position: relative;
+}
+
+.video-frame {
+    background: #0b0e16;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 16px;
+    padding: 0.9rem;
+    height: 100%;
+}
+
+.video-frame-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    color: var(--accent-secondary);
+    background: var(--accent-secondary-soft);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    display: inline-flex;
+    align-items: center;
+    padding: 0.32rem 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 0.8rem;
+}
+
+.video-frame-tag i {
+    color: var(--accent-secondary);
+    animation: rec-blink 1.4s infinite;
+}
+
+@keyframes rec-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.25; }
+}
+
+.video-embed-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-embed-wrap iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.repo-card {
+    background: linear-gradient(160deg, var(--bg-card) 0%, #1a2030 100%);
+    border: 1px solid rgba(245, 158, 11, 0.22);
+    border-radius: 16px;
+    padding: 1.8rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 45px -20px rgba(0, 0, 0, 0.5);
+}
+
+.repo-card .icon-wrap {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+}
+
+.repo-card .repo-icon {
+    background: var(--accent-secondary-soft);
+    color: var(--accent-secondary);
+}
+
+.repo-card p {
+    flex-grow: 1;
+}
+
+.btn-repo {
+    background: transparent;
+    color: var(--text-main);
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 0.68rem 1.2rem;
+    border-radius: 9px;
+    border: 1px solid rgba(245, 158, 11, 0.45);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.btn-repo:hover {
+    background: var(--accent-secondary);
+    border-color: var(--accent-secondary);
+    color: #1a1206;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -8px rgba(245, 158, 11, 0.45);
+}
+
+.repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+.repo-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.repo-meta i {
+    color: var(--accent-secondary);
+}
+
 @media (max-width: 767.98px) {
     .hero-project {
         padding: 6rem 0 3rem 0;
@@ -328,4 +585,7 @@ html {
         margin-left: auto;
         margin-right: auto;
     }
-}    
+    .hero-badges-row {
+        justify-content: center;
+    }
+}
