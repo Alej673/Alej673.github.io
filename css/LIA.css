@@ -920,3 +920,332 @@ button:focus-visible,
         opacity: 1;
     }
 }
+
+/* ==========================================================================
+   L-IA — FASE 8 (css/LIA-fase8.css)
+   Extiende css/LIA.css: usa sus variables (--accent-cyan, --bg-card, etc.)
+   Cargar DESPUÉS de LIA.css.
+   ========================================================================== */
+
+.fase8-section {
+    padding: clamp(3rem, 6vw, 5rem) 0;
+    background:
+        radial-gradient(circle at 85% 0%, rgba(0, 242, 254, 0.07), transparent 45%),
+        var(--bg-main);
+    border-top: 1px solid var(--border-cyan);
+    border-bottom: 1px solid var(--border-cyan);
+}
+
+/* --- Etiqueta de versión --- */
+.f8-tag {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.1rem 0.55rem;
+    border-radius: 999px;
+    border: 1px solid var(--border-cyan);
+    background-color: var(--accent-cyan-dim);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    color: var(--accent-cyan);
+}
+
+/* --- Métricas --- */
+.f8-stat {
+    height: 100%;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-top: 3px solid var(--accent-cyan);
+    border-radius: 10px;
+    transition: var(--transition-smooth);
+}
+
+.f8-stat:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-cyan);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35), 0 0 16px var(--accent-cyan-dim);
+}
+
+.f8-stat-value {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--accent-cyan);
+}
+
+.f8-stat-label {
+    margin-top: 0.6rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.f8-stat-note {
+    margin-top: 0.15rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+}
+
+/* --- Componentes consolidados (mismo lenguaje visual que .debug-item) --- */
+.f8-feature {
+    height: 100%;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-cyan);
+    border-radius: 8px;
+    transition: var(--transition-smooth);
+}
+
+.f8-feature:hover {
+    transform: translateX(6px);
+    background-color: rgba(31, 41, 55, 0.85);
+    box-shadow: -4px 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.f8-feature > i {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 1.4rem;
+    color: var(--accent-cyan);
+}
+
+.f8-feature h5 {
+    margin-bottom: 0.6rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.f8-feature p {
+    margin: 0;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: var(--text-secondary);
+}
+
+.f8-feature code,
+.f8-endpoint code {
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    color: var(--accent-cyan);
+    background: transparent;
+    padding: 0;
+}
+
+/* --- Paneles (línea de tiempo, contrato, hoja de ruta) --- */
+.f8-panel {
+    height: 100%;
+    padding: 1.6rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.f8-panel h5 {
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.f8-panel h5 i {
+    margin-right: 0.5rem;
+    color: var(--accent-cyan);
+}
+
+/* Línea de tiempo */
+.f8-timeline {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 1.5rem;
+    list-style: none;
+    border-left: 2px solid var(--border-cyan);
+}
+
+.f8-timeline li {
+    position: relative;
+    padding-bottom: 1.4rem;
+}
+
+.f8-timeline li:last-child {
+    padding-bottom: 0;
+}
+
+.f8-timeline li::before {
+    content: '';
+    position: absolute;
+    left: -1.95rem;
+    top: 0.3rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: var(--bg-card);
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 8px var(--accent-cyan-dim);
+}
+
+.f8-tl-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 1px;
+    color: var(--accent-cyan);
+}
+
+.f8-tl-title {
+    margin: 0.15rem 0 0.25rem;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.f8-tl-text {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Contrato frontend-backend */
+.f8-endpoint {
+    display: flex;
+    gap: 0.9rem;
+    align-items: baseline;
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 0.82rem;
+}
+
+.f8-endpoint:first-of-type { padding-top: 0; }
+.f8-endpoint:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.f8-endpoint code {
+    flex: 0 0 8.5rem;
+    font-size: 0.8rem;
+}
+
+.f8-endpoint span {
+    color: var(--text-secondary);
+    line-height: 1.45;
+}
+
+/* Hoja de ruta */
+.f8-road {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.f8-road li {
+    padding: 0.65rem 0;
+    border-bottom: 1px dashed var(--border-color);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.f8-road li:first-child { padding-top: 0; }
+.f8-road li:last-child { border-bottom: 0; padding-bottom: 0; }
+.f8-road strong { color: var(--text-primary); }
+
+/* --- Bloque de descarga de la bitácora --- */
+.f8-doc-cta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    padding: 1.5rem 1.75rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-cyan);
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+}
+
+.f8-doc-cta::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-cyan), transparent);
+}
+
+.f8-doc-cta h5 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.f8-doc-cta small {
+    color: var(--text-secondary);
+}
+
+.f8-doc-cta .btn {
+    padding: 0.6rem 1.4rem;
+}
+
+/* --- Responsividad --- */
+@media (max-width: 767.98px) {
+    .f8-panel,
+    .f8-doc-cta {
+        padding: 1.25rem;
+    }
+
+    .f8-endpoint {
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+
+    .f8-endpoint code {
+        flex-basis: auto;
+    }
+
+    .f8-doc-cta > div {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .f8-stat:hover,
+    .f8-feature:hover {
+        transform: none;
+    }
+}
+
+/* --- Ajustes para contenedores de video híbridos (Vertical / Horizontal) --- */
+.fase8-section .module-card {
+    background-color: var(--bg-card); /* Respeta tu paleta base */
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.fase8-section .module-card:hover {
+    border-color: var(--border-cyan);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(0, 242, 254, 0.1);
+}
+
+.fase8-section .module-video-wrap {
+    position: relative;
+    width: 100%;
+    height: 320px; /* Altura fija para que ambas tarjetas queden simétricas */
+    background-color: #03070c; /* Fondo extra oscuro para disimular los bordes del video */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.fase8-section .module-video-wrap video {
+    width: 100%;
+    height: 100%;
+    /* object-fit: contain es la magia aquí. 
+       Evita que el video vertical se recorte. */
+    object-fit: contain; 
+    background: transparent;
+}
