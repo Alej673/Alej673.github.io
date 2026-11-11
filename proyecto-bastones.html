@@ -83,6 +83,66 @@
         </div>
     </header>
 
+    <!-- ================= ACTUALIZACIÓN v2.1: PRODUCCIÓN & ADENDA ================= -->
+    <section class="section-alt border-top border-bottom border-info border-opacity-25 py-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <!-- Columna Izquierda: Contexto del Despliegue y Botón a la Web -->
+                <div class="col-lg-7">
+                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-success bg-opacity-10 border border-success border-opacity-50 text-success small fw-semibold mb-3">
+                        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" style="width: 8px; height: 8px;"></span>
+                        ACTUALIZACIÓN v2.1 — SISTEMA EN PRODUCCIÓN
+                    </div>
+                    <h2 class="section-title mt-1">De Localhost a la Nube: Despliegue & DevOps</h2>
+                    <p class="text-secondary mb-4">
+                        El proyecto evolucionó más allá del entorno local de desarrollo. Se contenerizó la arquitectura en <strong>3 servicios aislados con Docker</strong> sobre un servidor VPS Linux en Alemania (Netcup), automatizando el flujo de integración con un script CI/CD propio (<code>deploy.sh</code>) y blindando la lógica operativa mediante <em>Single Source of Truth</em> y <em>UI Freeze</em>.
+                    </p>
+
+                    <!-- Métricas y Badges de Producción -->
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <span class="tech-badge"><i class="fa-brands fa-docker text-info me-1"></i> Docker & Compose</span>
+                        <span class="tech-badge"><i class="fa-solid fa-server text-info me-1"></i> Nginx + SSL (Let's Encrypt)</span>
+                        <span class="tech-badge"><i class="fa-brands fa-linux text-info me-1"></i> VPS Linux (Netcup)</span>
+                        <span class="tech-badge"><i class="fa-solid fa-gauge-high text-success me-1"></i> k6: 200 VUs (100% Éxito)</span>
+                        <span class="tech-badge"><i class="fa-solid fa-magnifying-glass-chart text-warning me-1"></i> Lighthouse: 100 Best Practices / 92 SEO</span>
+                    </div>
+
+                    <!-- Botón principal para visitar el sitio en vivo -->
+                    <div class="d-flex flex-wrap gap-3 align-items-center mt-2">
+                        <a href="https://artetitival.com" target="_blank" rel="noopener noreferrer" class="btn btn-cyan px-4 py-2 fw-semibold">
+                            <i class="fa-solid fa-globe me-2"></i>Visitar Sitio Web en Vivo (artetitival.com)
+                            <i class="fa-solid fa-arrow-up-right-from-square ms-2 small"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Tarjeta de descarga de la Adenda v2.1 -->
+                <div class="col-lg-5">
+                    <div class="doc-download-card border-info border-opacity-50 position-relative">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="icon-wrap">
+                                    <i class="fa-solid fa-file-shield"></i>
+                                </div>
+                                <div>
+                                    <h6 class="mb-0 fw-semibold text-white">Adenda de Actualización (v2.1)</h6>
+                                    <small class="text-cyan font-monospace">Infraestructura, Seguridad & SEO</small>
+                                </div>
+                            </div>
+                            <span class="badge bg-info text-dark fw-bold">NUEVO</span>
+                        </div>
+                        <p class="text-secondary small mb-3">
+                            Documento complementario a la versión 2.0: detalla la arquitectura de contenedores (PHP 8.3-FPM, MySQL 8.4, Nginx), endurecimiento de controladores, modalidad operativa <em>"Sin Bastón"</em>, precio comercial inmutable y pruebas de estrés.
+                        </p>
+                        <a href="documentos/Sistema_Bastones_Actualizacion_v2.1.pdf" class="btn btn-download-doc w-100" download>
+                            <i class="fa-solid fa-download me-2"></i>Descargar Adenda Técnica v2.1 (.pdf)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ================= DESGLOSE DE MÓDULOS (LOS VIDEOS CORTOS) ================= -->
     <section class="section-main">
         <div class="container">
